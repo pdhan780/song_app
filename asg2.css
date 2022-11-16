@@ -1,0 +1,485 @@
+.hide{
+    display: none;
+}
+/*credit for snackbar: https://www.w3schools.com/howto/howto_js_snackbar.asp*/
+#snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; 
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color:black;
+    color: #fff; 
+    text-align: center; 
+    border-radius: 12px; 
+    padding: 15px; 
+    font-weight:bold;
+    position: fixed; 
+    z-index: 1;
+    left: 50%; 
+    bottom: 30px; 
+  }
+
+  #snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  @-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+  }
+#mainView h1 {
+  border-style: solid; 
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 20px;
+  padding-left: 150px;
+  background-color: #002D62;
+  color: white;
+
+}
+.creditPopup{
+    width: 200px;
+    height: 100px;
+    border-radius: 5px; 
+    border-left: solid;
+    border-right: solid;
+    border-bottom: solid;
+    border-color: #fff;  
+    color: white;
+    background-color:#002D62;
+    margin-left: 1150px;
+    position: absolute;
+    
+
+}
+
+.creditPopup p{
+    font-family:Helvetica, Arial, sans-serif;
+    font-weight: thin;
+    font-size: 10px;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    margin: 5px;
+}
+
+#mainView .topButton{
+    background-color: #002D62;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 900;
+
+}
+
+
+#playListButton{
+    margin-left: 400px;
+}
+
+#songSearch {
+
+    border-style:solid;
+    background-color: #002D62;
+    color: white;
+    height: 500px;
+    width: 300px;
+    float:left;
+
+}
+
+#songSearch h4{
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 900;
+    text-align: center;
+    
+  
+}
+
+#results{
+    border-style:solid;
+    background-color: #002D62;
+    color: white;
+    height: 500px;
+    
+
+}
+
+#results h5{
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 900;
+    text-align: center;
+    font-size: larger;
+
+}
+
+#mainViewFooter{
+    width: 100%;
+    background-color:  #002D62;
+    border-style: 2px solid white;
+    outline-style:outset;
+    outline-color:#002D62; 
+}
+
+#mainViewFooter a:link, a:visited, a:hover, a:active{
+text-decoration: none;
+color:white;
+}
+
+#mainViewFooter a p{
+    font-size: 14px;
+    font-family: Helvetica, Arial, sans-serif;
+    color: white;
+    font-weight: 900;
+
+}
+
+.labelStyle{
+    font-size: 14px;
+    font-family: Helvetica, Arial, sans-serif;
+    color: white;
+}
+
+.filterBttmButton{
+    font-size: 14px;
+    font-family: Helvetica, Arial, sans-serif;
+    margin-top: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color:#002D62;
+    color: white;
+    text-align: center;
+}
+#titleInput{
+    margin-left: 15px;
+    width: 127px;
+}
+
+#pickArtist{
+    display: inline-block;
+    margin-left: 10px;
+    width: 135px;
+}
+#pickGenre{
+    display: inline-block;
+    margin-left: 3px;
+    width: 133px;
+}
+#userinput_one{
+    display: block;
+
+}
+
+#userinput_two{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+#userinput_three{
+    display: block;
+}
+
+.songStruct{
+
+    display:inline-block;
+    color: white;
+    font-size: medium;
+    font-weight: 700;
+    font-family: Helvetica, Arial, sans-serif;
+    height: 300px;
+    width: 220px;
+    overflow-y: scroll;
+}
+
+.songStruct li{
+    padding: 8px;
+    overflow-x: hidden;
+}
+
+
+#popularityResult{
+    
+    border-right: solid;
+    border-right-color: aliceblue;  
+}
+#genreResult{
+    border-right: solid;
+    border-right-color: aliceblue;
+    
+}
+
+#yearResult{
+    border-right:solid;
+    border-right-color: aliceblue;
+
+}
+
+
+#artistResult{
+
+    border-right: solid;
+    border-right-color: aliceblue; 
+}
+
+
+#titleResult{
+    border-right: solid;
+    border-right-color: aliceblue;
+    
+}
+.resultList{
+    list-style: none;
+       
+}
+
+.resultList li{
+    margin: 5px;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+
+#addButton{
+    display:inline-block;
+    font-size: 14px;
+    font-family: Helvetica, Arial, sans-serif;
+    margin-top: 20px;
+    margin-left: 1050px;
+    padding: 18px;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    border: solid;
+    border-width: medium;
+    border-color: white;
+    background-color: #002D62;
+}
+
+.songStruct .searchHeadings{
+    
+    padding-left: 20px;
+    margin-left: 10px;
+}
+/*end of mainView*/
+
+
+
+
+
+#singleView h2 {
+    border-bottom: solid;
+    border-color: white; 
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+    padding: 20px;
+    background-color: #002D62;
+    color: white;
+    font-weight: 900;
+}
+#singleView {
+    background-color: #002D62;
+    height: 100%;
+    width: 100%;
+}
+.topButtonSingle{
+    background-color: #002D62;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 750;    
+}
+
+#closeSingle{
+    margin-left: 400px;
+}
+#singleView #song_info {
+    background-color: #002D62;
+    color:white;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    display: inline-block;
+    height: 100%;  
+    border-style: solid;
+    border-color: white;
+    width: 500px;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+#singleView #song_info #songInfo1 p{
+    padding: 5px;
+  
+   
+}
+
+#singleView #song_info #songInfo2 p{
+    padding: 5px;   
+}
+
+#singleView #song_info #songInfo1{  
+    width: 100%;
+    
+}
+#singleView #song_info #songInfo2{
+    width: 100%;
+    border-bottom: solid;
+    border-color: white;
+}
+
+
+#singleView #song_info h1{
+    font-weight: bold;
+    font-size:large;
+    margin-left: 25px;
+    font-size: 30px;
+}
+
+#singleView #song_info #analysisData{   
+    margin-left: 20px;
+}
+
+#song_info #analysisData h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    
+}
+
+#singleView #radar_chart{
+    display:inline-block;
+    position: absolute;
+    background-color: #002D62;
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    border-style: solid;
+    border-color: white;
+    height: 80%;
+    width: 500px;
+    margin-right: 200px;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+
+#singleView #radar_chart h1{
+    font-weight: bold;
+    font-size:larger;
+    text-align: center;   
+}
+#singleView footer{
+    background-color: #002D62;
+    border-top: solid;
+    border-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#singleView footer a{
+    color:white;
+    text-decoration: none;   
+}
+/* end of single view*/
+
+#playlistView h1{
+    background-color: #002D62;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 10px;
+    padding: 20px;
+    padding-left: 150px;
+    color:white;    
+    font-family: Helvetica, Arial, sans-serif;
+    
+  
+}
+#playlistView #results h5{
+    text-align: left;
+    margin-left: 30px;
+    
+}
+#playlistView .topButton{
+    background-color: #002D62;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 900;
+    
+
+}
+#playlistView .button{
+    background-color: #002D62;
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 900;
+
+    
+
+}
+
+#playlistView #clearPlaylist{
+    margin-left: 200px;
+}
+
+#closeView{
+    margin-left: 150px;
+}
+
+#playlistView #results{
+   border-style: bold;
+   border-color: white;
+    padding-bottom: 70px;
+    
+    
+}
+
+#playlistViewFooter{
+    width: 100%;
+    background-color:  #002D62;
+    border-style: 2px solid white;
+    outline-color:#002D62; 
+}
+
+#song_info p{
+    font-weight: bold;
+}
+#playlistViewFooter a p{
+    font-size: 14px;
+    font-family: Helvetica, Arial, sans-serif;
+    color: white;
+    font-weight: 900;
+
+}
+
+#playlistViewFooter a:link { text-decoration: none; }
+
+
+#playlistViewFooter a:visited { text-decoration: none; }
+
+
+#playlistViewFooter a:hover { text-decoration: none; }
+
+
+#playlistViewFooter a:active { text-decoration: none; }
