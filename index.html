@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset ="utf-8"/>
+        <title>Assignment 2</title>
+        <link rel ="stylesheet" href = "asg2.css">
+        <script src="assign2.js"></script>
+        <script src ="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.js"></script>
+    </head>
+<body>
+
+<div id = "mainView">
+
+<div id="snackbar" class = "hide">Song Has Been Added!</div>   
+<h1> Song Application
+<button id ="playListButton"class="topButton">Playlist</button>
+
+<button id = "creditButton" class="topButton hideCredit">Credits</button>
+</h1>
+
+<div class ="creditPopup hide">
+    <p>Pelvain Dhanda & Nimrat Brar</p>
+   <a href =" https://github.com/pdhan780/3612-asg2" ><p>Github Repo</p></a>
+    
+</div>
+
+<div id ="songSearch">
+    <h4>Basic Song Search</h4>
+
+    <div id = "filter">
+
+        <div id ="userinput_one">
+        <input type="checkbox" value="title" id="titleSearch">
+        <label class ="labelStyle" for="titleSearch">Title</label>
+        <input id ="titleInput" type="text">
+        </div>
+
+        <div id ="userinput_two">
+        <input type="checkbox" value ="artist" id ="artistSearch">
+        <label class ="labelStyle" for ="artistSearch">Artist</label>
+        <select id="pickArtist">
+            <option value="none">Select Artist</option> 
+        </select>
+        </div>
+
+        <div id = "userinput_three">
+        <input type="checkbox" value ="genre" id ="genreSearch">
+        <label class = "labelStyle" for ="genreSearch">Genre</label>
+        <select id ="pickGenre">
+            <option value="none">Select Genre</option>    
+        </select>
+        </div>
+    </div>
+    <button class ="filterBttmButton" id = "clearButton"> Clear</button>
+    <button class ="filterBttmButton" id = "applyFilterButton">Apply Filter</button>
+</div>
+
+
+<div id ="results">
+    <h5> Browse / Search Results
+    <button id ="addButton">ADD</button>
+    </h5>
+
+
+   <div class="songStruct" id="titleResult"><p class ="searchHeadings" id = "titleHeading">Title
+    <img src = "arrow.png" alt = "arrow" width = "15" height = "15">
+    </p>
+    <ul id = "titleResultList" class="resultList selectTitleForSingle">
+   
+    </ul>
+   </div>
+
+   <div class ="songStruct" id="artistResult"><p class ="searchHeadings" id = "artistHeading">Artist
+    <img src = "arrow.png" alt = "arrow" width = "15" height = "15">
+   </p>
+    <ul id = "artistResultList" class="resultList">
+       
+
+    </ul> 
+   </div>
+
+   <div class = "songStruct" id ="yearResult"><p class ="searchHeadings" id = "yearHeading">Year
+    <img src = "arrow.png" alt = "arrow" width = "15" height = "15">
+   </p>
+    <ul id = "yearResultList" class="resultList">
+        
+    </ul>
+   </div>
+
+   <div class ="songStruct" id ="genreResult"><p class ="searchHeadings" id = "genreHeading">Genre
+    <img src = "arrow.png" alt = "arrow" width = "15" height = "15">
+   </p>
+    <ul id = "genreResultList" class="resultList">
+  
+    </ul>
+   </div>
+
+   <div class = "songStruct" id="popularityResult"><p class ="searchHeadings" id = "popularityHeading">Popularity
+    <img src = "arrow.png" alt = "arrow" width = "15" height = "15">
+   </p>
+    <ul id ="popularityResultList" class="resultList">
+      
+
+    </ul>
+   </div>
+
+</div>
+
+<footer id ="mainViewFooter">
+    <a href ="#"><p>Copyright &copy; 2022 Song Application</p></a>
+    <a href ="#"><p>About Us</p></a>
+    <a href ="#"><p>Privacy Policy</p></a>
+    <a href ="#"><p>Sitemap</p></a>
+    <a href = "https://www.pngkit.com/view/u2w7u2a9t4e6o0w7_white-drop-down-arrow/"><p>Image Credit</p></a>
+</footer>
+
+</div>
+
+<div id = "singleView" class = "hide" >
+    <h2> Single Song View
+        <button id ="closeSingle" class="topButtonSingle">Close View</button>
+        <button id ="creditButtonSingle" class ="topButtonSingle hideCredit">Credits</button>
+    </h2>
+
+    <div class ="creditPopup hide">
+        <p>Pelvain Dhanda & Nimrat Brar</p>
+        <a href =" https://github.com/pdhan780/3612-asg2" ><p>Github Repo</p></a>
+    </div>
+
+        <div id="song_info">
+            <h1>Song Information:</h1>
+            <div id = "songInfo1">
+           <p id= "title"> </p> 
+            <p id = "artistName"> </p>
+        </div>
+
+            <div id = "songInfo2">
+                 <p id = "genre">  </p>
+                 <p id = "year">   </p>
+                 <p id = "duration">  </p> <!-- show in minutes and seconds-->
+            </div>
+            <div id = "analysisData">
+
+            <h3>Analysis data:</h3>
+            <div id = "analysisList">
+                <p id = "bpm">  </p>
+                <p id = "energy">   </p>
+                <p id = "danceability">  </p>
+                <p id = "valence"> </p>
+                <p id = "acousticness"> </p>
+                <p id = "speechiness"> </p>
+                <p id = "popularity">  </p> 
+                <p id = "loudness">    </p>
+                <p id = "liveness">    </p>
+            </div>
+            </div>
+        </div>
+        
+        <div id="radar_chart">
+            <h1>Song In Depth</h1>
+            <canvas id="myChart" width ="300" height = "200"> </canvas>
+        </div>
+        
+        <footer id = "singleViewFooter">
+            <a href ="#"><p>Copyright &copy; 2022 Song Application</p></a>
+            <a href ="#"><p>About Us</p></a>
+            <a href ="#"><p>Privacy Policy</p></a>
+            <a href ="#"><p>Sitemap</p></a>
+         
+        </footer>
+</div>
+
+<div id = "playlistView" class = "hide">
+    <h1> Playlist View
+        <button id ="closeView"class="topButton">Close View</button>
+        
+        <button id = "creditButton" class="topButton hideCredit">Credits</button>
+        </h1>
+        
+        <div class ="creditPopup hide">
+            <p>Pelvain Dhanda & Nimrat Brar</p>
+            <a href =" https://github.com/pdhan780/3612-asg2" ><p>Github Repo</p></a>
+        </div>
+    
+        <div id ="results">
+            <h5> Playlist Details
+            <button id = "clearPlaylist" class = "button">Clear Playlist</button>
+                <button id ="remove" class = "button">Remove</button>
+              
+            </h5>
+            
+        
+        
+           <div class="songStruct" id="titleResult"><p class ="searchHeadings" id = "titleHeading">Title
+            <img src = "arrow.png" alt = arrow width = "15" height = "15">
+            </p>
+            <ul id = "playListViewTitleResultList" class="resultList selectTitleForSingle">
+                
+            </ul>
+           </div>
+        
+           <div class ="songStruct" id="artistResult"><p class ="searchHeadings" id = "artistHeading">Artist
+            <img src = "arrow.png" alt = arrow width = "15" height = "15">
+           </p>
+            <ul id = "playListViewArtistResultList" class="resultList">
+               
+        
+            </ul> 
+           </div>
+        
+           <div class = "songStruct" id ="yearResult"><p class ="searchHeadings" id = "yearHeading">Year
+            <img src = "arrow.png" alt = arrow width = "15" height = "15">
+           </p>
+            <ul id = "playListViewYearResultList" class="resultList">
+                
+            </ul>
+           </div>
+        
+           <div class ="songStruct" id ="genreResult"><p class ="searchHeadings" id = "genreHeading">Genre
+            <img src = "arrow.png" alt = arrow width = "15" height = "15">
+           </p>
+            <ul id = "playListViewGenreResultList" class="resultList">
+          
+            </ul>
+           </div>
+        
+           <div class = "songStruct" id="popularityResult"><p class ="searchHeadings" id = "popularityHeading">Popularity
+            <img src = "arrow.png" alt = arrow width = "15" height = "15">
+           </p>
+            <ul id ="playListViewPopularityResultList" class="resultList">
+              
+        
+            </ul>
+           </div>
+        </div>
+        
+        <footer id ="playlistViewFooter">
+            <a href ="#"><p>Copyright &copy; 2022 Song Application</p></a>
+            <a href ="#"><p>About Us</p></a>
+            <a href ="#"><p>Privacy Policy</p></a>
+            <a href ="#"><p>Sitemap</p></a>
+        </footer>
+
+</div>
+
+</body>
+
+
+
+</html>
