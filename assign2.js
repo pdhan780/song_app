@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-    /* url of song api --- https versions hopefully a little later this semester */	
+  	
 const songAPI = 'https://www.randyconnolly.com/funwebdev/3rd/api/music/songs-nested.php';
 
 let songJSON = localStorage.getItem("songStuff")
